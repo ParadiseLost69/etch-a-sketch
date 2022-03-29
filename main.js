@@ -9,13 +9,21 @@ function rowCreator (number){
     for (let i = number; i > 0; i--) {
         box = document.createElement("div");
         box.className = "box " + "box" + i;
-        box.textContent = ""
         gridBox.appendChild(box)
         
         for (let j = number; j > 0; j--) {
             column = document.createElement("div");
             column.className = "box " + "column" + j;
-            column.textContent = ""
+            column.addEventListener("mouseover", function (e) {
+                e.target.style.backgroundColor = "black"
+            
+            })
+            column.addEventListener("click",function (e) {
+                e.target.style.backgroundColor = "white"
+            }
+            )
+            
+
             box.appendChild(column)
             }
 
@@ -23,20 +31,41 @@ function rowCreator (number){
     }
 
 }
-function columnCreator(numberTwo) {
-            for (let i = numberTwo; i > 0; i--) {
-                column = document.createElement("div")
-                column.className = "box" + "column" + i
-                box.textContent = "hi"
-                box.appendChild(column)
 
-            }
-}
+
 
 function colorChanger (){
 
+
 }
-rowCreator(12);
+
+// creates rows
+rowCreator(16);
+
+
+////coloring function
+
+
+
+// reset function
+const clearButton = document.querySelector(".clear");
+clearButton.addEventListener("click", function(){
+    const boxes = Array.from(document.getElementsByClassName("box"));
+    boxes.forEach(box => {
+        box.remove();
+    })
+    rowCreator(16)
+}
+
+)
+
+    
+function clearBoxes(){
+    gridPixels = gridBox.querySelectorAll("div");
+    gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = "white")
+}
+
+
 
 
 
