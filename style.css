@@ -1,0 +1,51 @@
+/*layout*/
+body {
+    background-color: #28293D;
+}
+
+button {
+    border-radius: 5px;
+    width: 20em;
+    margin: 20px;
+
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    align-content: center;
+    border: solid 0.5px black;
+    
+}
+
+.box:hover {
+    background-color: #28293D;
+}
+
+.grid-box {
+    display:flex;
+    justify-content: center;
+
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+
+/*Button Styling*/
+.color, .make-grid {
+    color: #6500CD;
+    background-color: #BDCCD4;
+    border:none;
+
+}
+
+
+h1 {
+    color: aqua;
+}
