@@ -66,9 +66,33 @@ function clearBoxes(){
 }
 
 
+colorButton = document.querySelector(".color")
 
 
 
 
 
-//grid
+//Random Color Selector
+colors = ["red", "green", "blue", "black", "purple", "yellow","pink", "orange"]
+
+function randomColorSelector () {
+    random = Math.floor(Math.random() * colors.length)
+    return colors[random]
+}
+
+
+// color Button
+colorButton.addEventListener("click", function(){
+    const boxes = Array.from(document.getElementsByClassName("box"));
+    boxes.forEach(box => {
+        box.addEventListener ("mouseover", function (e) {
+            e.target.style.backgroundColor = randomColorSelector()
+        
+        });
+    })
+}
+
+)
+
+
+
